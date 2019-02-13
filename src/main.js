@@ -8,12 +8,18 @@ import 'mint-ui/lib/style.css'
 import './lib/mui/css/mui.min.css'
 import '@/style/common.css'
 import VueResource from 'vue-resource'
+import comment from './components/comment.vue'
 Vue.use(VueResource)
 // 导入扩展图标样式
+Vue.http.options.root = "http://www.lovegf.cn:8899/api/"
 import './lib/mui/css/icons-extra.css'
 
 Vue.use(Mint)
-
+import moment from "moment"
+Vue.filter("dataFormat",function(dataStr,pattern="YYYY-MM-DD HH:mm:ss"){
+  return moment(dataStr).format(pattern)
+})
+Vue.component("comment",comment)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

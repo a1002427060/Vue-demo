@@ -1,7 +1,10 @@
 <template>
-  <div id="app">
+  <div id="app-container">
     <mt-header fixed title="Vue-项目"></mt-header>
-    <router-view></router-view>
+		<transition>
+		<router-view></router-view>
+		</transition>
+    
     <nav class="mui-bar mui-bar-tab">
 			<router-link class="mui-tab-item" to="/home">
 				<span class="mui-icon mui-icon-home"></span>
@@ -29,9 +32,24 @@ export default {
 }
 </script>
 
-<style lang="less">
-    #app{
+<style lang="less" scoped>
+
+    #app-container{
     padding-top: 40px;
-    padding-bottom: 50px
-    }
+		padding-bottom: 50px;
+		overflow-x: hidden;
+		}
+		.v-enter{
+			opacity: 0;
+			transform: translateX(100%);
+		}
+		.v-leave-to{
+			opacity: 0;
+			transform: translateX(-100%);
+			position: absolute;
+		}
+		.v-leave-active,
+		.v-enter-active{
+			transition: all 0.5s ease;
+		}
 </style>
