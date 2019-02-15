@@ -9,7 +9,7 @@
         <div class="content" v-html = "newsInfo.content">
 
         </div>
-        <comment></comment>
+        <comment :id="this.id"></comment>
     </div>
 </template>
 <script>

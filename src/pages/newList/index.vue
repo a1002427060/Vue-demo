@@ -29,7 +29,7 @@ export default {
   methods: {
     getNewList() {
       this.$http.get("getnewslist").then(result => {
-        console.log(result);
+
 
         this.newList = result.body.message;
       });
