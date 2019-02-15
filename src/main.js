@@ -9,6 +9,7 @@ import './lib/mui/css/mui.min.css'
 import '@/style/common.css'
 import VueResource from 'vue-resource'
 import comment from './components/comment.vue'
+import '@/lib/swiper/css/swiper.css'
 Vue.use(VueResource)
 // 导入扩展图标样式
 Vue.http.options.root = "http://www.lovegf.cn:8899/api/"
