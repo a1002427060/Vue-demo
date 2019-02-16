@@ -22,7 +22,8 @@ Vue.filter("dataFormat",function(dataStr,pattern="YYYY-MM-DD HH:mm:ss"){
 })
 Vue.component("comment",comment)
 Vue.config.productionTip = false
-
+import VuePreview from 'vue-pic-preview'
+Vue.use(VuePreview)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
