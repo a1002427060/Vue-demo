@@ -27,12 +27,37 @@ Vue.component("swiper",swiper)
 Vue.config.productionTip = false
 import VuePreview from 'vue-pic-preview'
 Vue.use(VuePreview)
+
 import Vuex from 'vuex'
 Vue.use(Vuex)
 /* eslint-disable no-new */
+let store  = new Vuex.Store({
+    state:{
+      car:[]
+    },
+    mutations:{
+      addToCar(state,goodsInfo){
+        let index = state.car.findIndex(item=> item.id === goodsInfo.id)
+        if(index === -1) {
+          state.car.push(goodsInfo)
+        }else{
+          state.car[index].count += parseInt(goodsInfo.count)
+        }
+      }
+    },
+    getters:{
+      totalCount(state){
+        let sum = 0
+        state.car.forEach(item => sum += item.count)
+        return sum
+      }
+    }
+})
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
+

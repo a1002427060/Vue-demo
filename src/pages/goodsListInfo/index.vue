@@ -99,6 +99,12 @@ export default {
     },
     addToShopCar(){
       this.ballFlag = !this.ballFlag
+      this.$store.commit("addToCar",{
+        id:this.id,
+        count:this.buyCount,
+        price:this.goodsinfo.sell_price,
+        selected:true
+      })
     },
     beforeEnter: (el) => {
       el.style.transform = "translate(0,0)"
