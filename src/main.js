@@ -10,6 +10,7 @@ import '@/style/common.css'
 import VueResource from 'vue-resource'
 import comment from './components/comment.vue'
 import '@/lib/swiper/css/swiper.css'
+import swiper from './components/swiper.vue'
 Vue.use(VueResource)
 // 导入扩展图标样式
 Vue.http.options.root = "http://www.lovegf.cn:8899/api/"
@@ -17,13 +18,17 @@ import './lib/mui/css/icons-extra.css'
 
 Vue.use(Mint)
 import moment from "moment"
+
 Vue.filter("dataFormat",function(dataStr,pattern="YYYY-MM-DD HH:mm:ss"){
   return moment(dataStr).format(pattern)
 })
 Vue.component("comment",comment)
+Vue.component("swiper",swiper)
 Vue.config.productionTip = false
 import VuePreview from 'vue-pic-preview'
 Vue.use(VuePreview)
+import Vuex from 'vuex'
+Vue.use(Vuex)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

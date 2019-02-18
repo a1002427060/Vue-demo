@@ -8,6 +8,9 @@ import newList from "@/pages/newList"
 import newInfo from "@/pages/newInfo"
 import photoList from "@/pages/photoList"
 import photoInfo from "@/pages/photoInfo"
+import goodsList from "@/pages/goodsList"
+import goodsInfo from "@/pages/goodsListInfo"
+
 
 Vue.use(Router)
 
@@ -22,6 +25,8 @@ export default new Router({
    {path:'/home/newInfo/:id',component:newInfo},
    {path:'/home/photoList',component:photoList},
    {path:'/home/photoInfo/:id',component:photoInfo},
+   {path:'/home/goodsList',component:goodsList},
+   {path:'/home/goodsInfo/:id',component:goodsInfo},
   ],
   linkActiveClass:"mui-active"
 })

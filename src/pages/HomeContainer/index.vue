@@ -1,12 +1,6 @@
 <template>
   <div class="HomeContainer">
-    <mt-swipe :auto="4000">
-      <mt-swipe-item v-for="(item,index) in banners" :key="index">
-        <a :href="item.url">
-          <img :src="item.img" alt>
-        </a>
-      </mt-swipe-item>
-    </mt-swipe>
+   <swiper :banners="banners" isfull="true"></swiper>
     <ul class="mui-table-view mui-grid-view mui-grid-9">
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <router-link to="/home/newlist">
@@ -21,10 +15,11 @@
         </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
+        <router-link to="/home/goodsList">
           <img src="@/assets/menu3.png" alt>
           <div class="mui-media-body">商品购买</div>
-        </a>
+        </router-link>
+        
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#">
@@ -69,13 +64,7 @@ export default {
 </script>
 <style lang="less" scoped>
 .HomeContainer {
-   .mint-swipe{
-       height: 200px;
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
+
   .mui-table-view{
       background-color: #fff;
       img{
